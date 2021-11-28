@@ -5,4 +5,4 @@ Feature: Main Page
   @smoke-tests
   Scenario: Opening the main page
     Given I open the main page
-    Then I see "Sign in" button in the header
+    Then I see "Katana" in the title
