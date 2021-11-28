@@ -22,13 +22,11 @@
     "url": "https://github.com/igorigorigorigor/cypress-cucumber-javascript/issues"
   },
   "homepage": "https://github.com/igorigorigorigor/cypress-cucumber-javascript#readme",
-  "dependencies": {
-    "cypress-cucumber-preprocessor": "^4.3.0"
-  },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
   },
   "devDependencies": {
-    "cypress": "^9.1.0"
+    "cypress": "^9.1.0",
+    "cypress-cucumber-preprocessor": "^4.3.0"
   }
 }
