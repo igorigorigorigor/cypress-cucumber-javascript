@@ -1,0 +1,34 @@
+{
+  "name": "cypress-cucumber-javascript",
+  "version": "1.0.0",
+  "description": "Example of cypress with cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run --spec \"**/*.feature\"",
+    "test:all": "cypress run --spec \"**/*.features\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorigorigorigor/cypress-cucumber-javascript.git"
+  },
+  "keywords": [
+    "cypress",
+    "cucumber",
+    "testing"
+  ],
+  "author": "Igor Andrianov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/igorigorigorigor/cypress-cucumber-javascript/issues"
+  },
+  "homepage": "https://github.com/igorigorigorigor/cypress-cucumber-javascript#readme",
+  "dependencies": {
+    "cypress-cucumber-preprocessor": "^4.3.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
+  "devDependencies": {
+    "cypress": "^9.1.0"
+  }
+}
