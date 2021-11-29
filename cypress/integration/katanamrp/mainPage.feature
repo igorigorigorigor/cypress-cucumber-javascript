@@ -5,4 +5,4 @@ Feature: Main Page
   @smoke-tests
   Scenario: Opening the main page
     Given I open the main page
-    Then I see "Katana" in the title
+    Then I see "Katana" in the title and "accept our cookie policy" pop-up
