@@ -6,7 +6,7 @@ Given('I open the main page', () => {
 
 Then(`I see "Katana" in the title and "accept our cookie policy" pop-up`, () => {
     cy.title()
-        .should("include", 'Katana │ Manufacturing ERP Software for Total Visibility');
+        .should("have.value", 'Katana │ Manufacturing ERP Software for Total Visibility');
     cy.contains('By visiting this website, you accept our cookie policy.')
         .should('be.visible');
     cy.contains('Got it!')

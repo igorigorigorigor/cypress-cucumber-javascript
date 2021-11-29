@@ -3,7 +3,7 @@ import { Given } from "cypress-cucumber-preprocessor/steps";
 Given('I press "Sign in" button', () => {
     cy.visit('/')
     cy.contains('Got it!').click();
-    cy.get('[class="icon  header__toggle-icon header__toggle-icon--open"]').click();
+    cy.get('[aria-label="Menu"]').click();
     cy.contains('Sign in').click();
 });
 
