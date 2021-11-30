@@ -1,3 +1,4 @@
+@smoke-tests @main-page
 Feature: Main Page
 
   I want to open the main page
