@@ -1,5 +1,9 @@
 {
   "ignoreTestFiles": "*.js",
   "testFiles": "**/*.{feature,features}",
-  "baseUrl": "https://katanamrp.com/"
+  "baseUrl": "https://katanamrp.com/",
+  "env": {
+    "main_url": "/",
+    "login_url": "/login"
+  }
 }

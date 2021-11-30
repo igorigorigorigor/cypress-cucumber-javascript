@@ -1,18 +1,15 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
+import LoginPage from "../../../support/page_objects/loginPage";
 
-const PATH = '/login'
-const SELECTORS = {
-    getEmailInputField: () => cy.get('[name=email]'),
-    getPasswordInputField: () => cy.get('[name=password]'),
-}
+const loginPage=new LoginPage();
 
 Given('I press "Sign in" button', () => {
-    cy.visit(PATH)
+    loginPage.open();
 });
 
 Then(`I see "email" and "password" input fields`, () => {
-    SELECTORS.getEmailInputField()
+    loginPage.getEmailInputField()
         .should('be.visible');
-    SELECTORS.getPasswordInputField()
+    loginPage.getPasswordInputField()
         .should('be.visible');
 });
