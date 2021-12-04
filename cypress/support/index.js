@@ -7,6 +7,7 @@ import AuthenticateAPI from "./apis/authentication/authenticateAPI";
 
 export const {
     authenticateAPIRequestJsonSchema,
+    authenticateAPIResponseJsonSchema,
 } = require('./apis/authentication/authenticateAPIRequestJsonSchema');
 export const chai = require('chai');
 export const crypto = require("crypto");

@@ -1,8 +1,8 @@
 class LoginPage {
-    static path= Cypress.env('pageUrls').loginUrl
+    #path= Cypress.env("pageUrls").loginUrl
 
     open() {
-        cy.visit(LoginPage.path);
+        cy.visit(this.#path);
     }
     getEmailInputField() {
         return cy.get('[name=email]');

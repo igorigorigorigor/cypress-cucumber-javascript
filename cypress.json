@@ -7,6 +7,12 @@
       "trialUser": {
         "email": "andrianov2406@gmail.com",
         "password": "PK7rm8!@#$"
+      },
+      "params": {
+        "origin": "https://katanamrp.com",
+        "client_id": "fhZWp3TRAtS3U0X3QXk-Ct4Awxzc92P3",
+        "realm": "Username-Password-Authentication",
+        "credential_type": "http://auth0.com/oauth/grant-type/password-realm"
       }
     },
     "pageUrls": {
