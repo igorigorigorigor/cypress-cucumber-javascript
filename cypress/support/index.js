@@ -5,10 +5,8 @@ import LoginPage from "./pages/loginPage";
 import SalesOrdersPage from "./pages/salesOrdersPage";
 import AuthenticateAPI from "./apis/authentication/authenticateAPI";
 
-export const {
-    authenticateAPIRequestJsonSchema,
-    authenticateAPIResponseJsonSchema,
-} = require('./apis/authentication/authenticateAPIRequestJsonSchema');
+export const {authenticateAPIRequestJsonSchema} = require('./apis/authentication/authenticateAPIRequestJsonSchema');
+export const {authenticateAPIResponseJsonSchema} = require('./apis/authentication/authenticateAPIResponseJsonSchema');
 export const chai = require('chai');
 export const crypto = require("crypto");
 export const randomEmail = require('random-email');
