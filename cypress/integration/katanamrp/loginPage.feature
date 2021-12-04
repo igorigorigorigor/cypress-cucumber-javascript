@@ -9,4 +9,12 @@ Feature: Login Page
 
   Scenario: Sign in with valid credentials
     Given I sign in with valid email and password
-    Then App makes request to authenticate api and redirects to "sales" page
+    Then App makes request to authentication api and redirects to "sales" page
+
+  Scenario: Sign in with invalid email
+    Given I sign in with invalid email
+    Then App makes request to authentication api and shows error
+
+  Scenario: Sign in with valid email and invalid password
+    Given I sign in with valid email and invalid password
+    Then App makes request to authentication api and shows error

@@ -18,3 +18,10 @@ export const {
     authenticateAPIRequestJsonSchema,
 } = require('./apis/authentication/authenticateAPIRequestJsonSchema');
 export const chai = require('chai');
+
+export const randomEmail = require('random-email');
+export const crypto = require("crypto");
+
+export default function getRandomString(length) {
+    return crypto.randomBytes(length).toString('hex');
+}

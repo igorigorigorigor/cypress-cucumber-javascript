@@ -13,5 +13,8 @@ class LoginPage {
     getSignInButton(){
         return cy.get('[name=submit]');
     }
+    getAuthError(){
+        return cy.contains('Wrong email or password.');
+    }
 }
 export default LoginPage

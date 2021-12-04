@@ -1,8 +1,8 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
-import {
+import getRandomString, {
     authenticateAPI,
     authenticateAPIRequestJsonSchema,
-    loginPage,
+    loginPage, randomEmail,
     salesOrdersPage,
     trialUser
 } from "../../../support";
@@ -12,25 +12,23 @@ beforeEach(() => {
     authenticateAPI.intercept();
 })
 
-Given('I sign in with valid email and password', () => {
+Given('I sign in with valid email and invalid password', () => {
     loginPage.open();
     loginPage.getEmailInputField().type(trialUser.getEmail());
-    loginPage.getPasswordInputField().type(trialUser.getPassword());
+    loginPage.getPasswordInputField().type(getRandomString(8));
     loginPage.getSignInButton().click();
 });
 
-Then(`App makes request to authenticate api and redirects to "sales" page`, () => {
+Then(`App makes request to authentication api and shows error`, () => {
     authenticateAPI
         .getInterceptedRequestAndResponse().should((
             { request, response }) => {
-        expect(request.body).to.be.jsonSchema(authenticateAPIRequestJsonSchema);
-        expect(request.body).to.deep.include( {
-            username: trialUser.getEmail(),
-            password: trialUser.getPassword()
-        });
-        expect(response.statusCode).to.eq(200)
-    })
+        expect(response.statusCode).to.eq(403)
+    });
+    loginPage
+        .getAuthError()
+        .should('be.visible');
     salesOrdersPage
         .getSalesOrdersTitle()
-        .should('be.visible');
+        .should('not.exist');
 });

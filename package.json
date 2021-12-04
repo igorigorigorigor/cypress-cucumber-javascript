@@ -31,6 +31,7 @@
     "cypress-cucumber-preprocessor": "^4.3.0"
   },
   "dependencies": {
-    "chai-json-schema": "^1.5.1"
+    "chai-json-schema": "^1.5.1",
+    "random-email": "^1.0.3"
   }
 }
