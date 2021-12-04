@@ -1,17 +1,15 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
-import MainPage from "../../../support/pages/mainPage";
-
-const mainPage=new MainPage();
+import MainPage from "../../../support/pages/MainPage";
 
 Given('I open the main page', () => {
-    mainPage.open();
+    MainPage.open();
 });
 
 Then(`I see "Katana" in the title and "accept our cookie policy" pop-up`, () => {
-    mainPage.getTitleText()
+    MainPage.getTitleText()
         .should('be.visible')
-    mainPage.getCookiePolicyText()
+    MainPage.getCookiePolicyText()
         .should('be.visible');
-    mainPage.getCookiePolicyAcceptButton()
+    MainPage.getCookiePolicyAcceptButton()
         .should('be.visible');
 });

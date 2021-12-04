@@ -1,16 +1,16 @@
 class MainPage {
     static path= Cypress.env('pageUrls').mainUrl
 
-    open() {
-        cy.visit(MainPage.path)
+    static open() {
+        cy.visit(MainPage.path);
     }
-    getTitleText() {
+    static getTitleText() {
         return cy.contains('Everything you need to keep manufacturing');
     }
-    getCookiePolicyText(){
+    static getCookiePolicyText(){
         return cy.contains('By visiting this website, you accept our cookie policy.');
     }
-    getCookiePolicyAcceptButton(){
+    static getCookiePolicyAcceptButton(){
         return cy.contains('Got it!');
     }
 }

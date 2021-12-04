@@ -1,12 +1,13 @@
 class AuthenticateAPI {
     static path=  Cypress.env("apiUrls").loginUrl
-    static alias= 'AuthenticateAPI'
+    static alias= 'post'
+    static at_alias= '@post'
 
-    intercept() {
-        cy.intercept('POST', AuthenticateAPI.path).as(AuthenticateAPI.alias)
+    static intercept() {
+        cy.intercept('POST', AuthenticateAPI.path).as('post')
     }
-    getInterceptedRequestBody() {
-        cy.wait('@post')
+    static getInterceptedRequestBody() {
+        return cy.wait('@post')
             .its('request.body')
     }
 }
