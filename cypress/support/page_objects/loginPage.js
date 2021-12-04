@@ -1,5 +1,5 @@
 class LoginPage {
-    static path= Cypress.env('login_url')
+    static path= Cypress.env('pageUrls').loginUrl
 
     open() {
         cy.visit(LoginPage.path)

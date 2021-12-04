@@ -1,5 +1,5 @@
 class MainPage {
-    static path= Cypress.env('main_url')
+    static path= Cypress.env('pageUrls').mainUrl
 
     open() {
         cy.visit(MainPage.path)

@@ -3,9 +3,16 @@
   "testFiles": "**/*.{feature,features}",
   "baseUrl": "https://katanamrp.com/",
   "env": {
-    "email": "andrianov2406@gmail.com",
-    "password": "PK7rm8!@#$",
-    "main_url": "/",
-    "login_url": "/login"
+    "credentials": {
+      "email": "andrianov2406@gmail.com",
+      "password": "PK7rm8!@#$"
+    },
+    "pageUrls": {
+      "mainUrl": "/",
+      "loginUrl": "/login"
+    },
+    "apiUrls": {
+      "loginUrl": "https://login.katanamrp.com/co/authenticate"
+    }
   }
 }
