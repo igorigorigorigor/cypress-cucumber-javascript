@@ -26,7 +26,11 @@
     "nonGlobalStepDefinitions": true
   },
   "devDependencies": {
+    "chai": "^4.3.4",
     "cypress": "^9.1.0",
     "cypress-cucumber-preprocessor": "^4.3.0"
+  },
+  "dependencies": {
+    "chai-json-schema": "^1.5.1"
   }
 }

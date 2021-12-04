@@ -6,9 +6,8 @@ class AuthenticateAPI {
     intercept() {
         cy.intercept('POST', AuthenticateAPI.path).as(AuthenticateAPI.alias);
     }
-    getInterceptedRequestBody() {
-        return cy.wait(AuthenticateAPI.at_alias)
-            .its('request.body');
+    getInterceptedRequestAndResponse() {
+        return cy.wait(AuthenticateAPI.at_alias);
     }
 }
 export default AuthenticateAPI

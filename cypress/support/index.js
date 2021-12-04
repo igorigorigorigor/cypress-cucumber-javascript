@@ -3,7 +3,7 @@ import User from "./roles/user";
 import MainPage from "./pages/mainPage";
 import LoginPage from "./pages/loginPage";
 import SalesOrdersPage from "./pages/salesOrdersPage";
-import AuthenticateAPI from "./apis/authenticateAPI";
+import AuthenticateAPI from "./apis/authentication/authenticateAPI";
 
 export const trialUser= new User(Cypress.env('credentials').trialUser.email,
     Cypress.env('credentials').trialUser.password)
