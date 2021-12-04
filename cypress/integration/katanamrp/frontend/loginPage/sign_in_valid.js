@@ -5,7 +5,7 @@ import {
     loginPage,
     salesOrdersPage,
     trialUser
-} from "../../../support";
+} from "../../../../support";
 const {expect} = require("chai").use(require('chai-json-schema'));
 
 beforeEach(() => {

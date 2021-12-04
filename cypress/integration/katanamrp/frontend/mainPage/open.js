@@ -1,5 +1,5 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
-import {mainPage} from "../../../support";
+import {mainPage} from "../../../../support";
 
 Given('I open the main page', () => {
     mainPage.open();

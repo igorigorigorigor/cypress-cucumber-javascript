@@ -1,5 +1,5 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
-import {loginPage} from "../../../support";
+import {loginPage} from "../../../../support";
 
 Given('I press "Sign in" button', () => {
     loginPage.open();
