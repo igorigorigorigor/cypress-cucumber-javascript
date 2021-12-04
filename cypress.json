@@ -4,8 +4,10 @@
   "baseUrl": "https://katanamrp.com/",
   "env": {
     "credentials": {
-      "email": "andrianov2406@gmail.com",
-      "password": "PK7rm8!@#$"
+      "trialUser": {
+        "email": "andrianov2406@gmail.com",
+        "password": "PK7rm8!@#$"
+      }
     },
     "pageUrls": {
       "mainUrl": "/",

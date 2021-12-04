@@ -1,5 +1,5 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
-import MainPage from "../../../support/page_objects/mainPage";
+import MainPage from "../../../support/pages/mainPage";
 
 const mainPage=new MainPage();
 

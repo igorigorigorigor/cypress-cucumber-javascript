@@ -5,8 +5,8 @@ Feature: Login Page
 
   Scenario: Open the login page
     Given I press "Sign in" button
-    Then I see "email" and "password" input fields
+    Then App shows "email" and "password" input fields
 
   Scenario: Sign in with valid credentials
     Given I sign in with valid email and password
-    Then I see "sales" page
+    Then App makes request to authenticate api and redirects to "sales" page
