@@ -1,11 +1,12 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
-import {authenticateAPI, loginPage, salesOrdersPage, trialUser} from "../../../support";
-
-export const {
+import {
+    authenticateAPI,
     authenticateAPIRequestJsonSchema,
-} = require('../../../support/apis/authentication/authenticateAPIRequestJsonSchema');
+    loginPage,
+    salesOrdersPage,
+    trialUser
+} from "../../../support";
 const {expect} = require("chai").use(require('chai-json-schema'));
-const chai = require('chai');
 
 beforeEach(() => {
     authenticateAPI.intercept();

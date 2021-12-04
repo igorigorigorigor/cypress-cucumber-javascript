@@ -13,3 +13,8 @@ export const loginPage= new LoginPage();
 export const salesOrdersPage= new SalesOrdersPage();
 
 export const authenticateAPI= new AuthenticateAPI();
+
+export const {
+    authenticateAPIRequestJsonSchema,
+} = require('./apis/authentication/authenticateAPIRequestJsonSchema');
+export const chai = require('chai');
