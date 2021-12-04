@@ -1,10 +1,10 @@
 class SalesOrdersPage {
     static path= Cypress.env('sales_orders_url')
 
-    static open() {
+    open() {
         cy.visit(SalesOrdersPage.path);
     }
-    static getSalesOrdersTitle() {
+    getSalesOrdersTitle() {
         return cy.contains('Sales orders');
     }
 }

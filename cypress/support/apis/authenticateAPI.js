@@ -3,12 +3,12 @@ class AuthenticateAPI {
     static alias= 'post'
     static at_alias= '@post'
 
-    static intercept() {
-        cy.intercept('POST', AuthenticateAPI.path).as('post')
+    intercept() {
+        cy.intercept('POST', AuthenticateAPI.path).as(AuthenticateAPI.alias);
     }
-    static getInterceptedRequestBody() {
-        return cy.wait('@post')
-            .its('request.body')
+    getInterceptedRequestBody() {
+        return cy.wait(AuthenticateAPI.at_alias)
+            .its('request.body');
     }
 }
 export default AuthenticateAPI

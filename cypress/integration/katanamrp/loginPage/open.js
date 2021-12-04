@@ -1,13 +1,13 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
-import LoginPage from "../../../support/pages/LoginPage";
+import {loginPage} from "../../../support";
 
 Given('I press "Sign in" button', () => {
-    LoginPage.open();
+    loginPage.open();
 });
 
 Then(`App shows "email" and "password" input fields`, () => {
-    LoginPage.getEmailInputField()
+    loginPage.getEmailInputField()
         .should('be.visible');
-    LoginPage.getPasswordInputField()
+    loginPage.getPasswordInputField()
         .should('be.visible');
 });

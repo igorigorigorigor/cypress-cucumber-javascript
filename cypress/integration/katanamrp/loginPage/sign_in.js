@@ -1,31 +1,24 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
-import LoginPage from "../../../support/pages/LoginPage";
-import SalesOrdersPage from "../../../support/pages/salesOrdersPage";
-import AuthenticateAPI from "../../../support/apis/authenticateAPI";
-import User from "../../../support/roles/user";
-
-const authenticateAPI = new AuthenticateAPI();
-const trialUser= new User(Cypress.env('credentials').trialUser.email,
-    Cypress.env('credentials').trialUser.password)
+import {authenticateAPI, loginPage, salesOrdersPage, trialUser} from "../../../support";
 
 beforeEach(() => {
-    AuthenticateAPI.intercept();
+    authenticateAPI.intercept();
 })
 
 Given('I sign in with valid email and password', () => {
-    LoginPage.open();
-    LoginPage.getEmailInputField().type(trialUser.getEmail());
-    LoginPage.getPasswordInputField().type(trialUser.getPassword());
-    LoginPage.getSignInButton().click();
+    loginPage.open();
+    loginPage.getEmailInputField().type(trialUser.getEmail());
+    loginPage.getPasswordInputField().type(trialUser.getPassword());
+    loginPage.getSignInButton().click();
 });
 
 Then(`App makes request to authenticate api and redirects to "sales" page`, () => {
-    AuthenticateAPI.getInterceptedRequestBody()
+    authenticateAPI.getInterceptedRequestBody()
         .should('deep.include', {
             username: trialUser.getEmail(),
             password: trialUser.getPassword()
         })
-    SalesOrdersPage
+    salesOrdersPage
         .getSalesOrdersTitle()
         .should('be.visible');
 });

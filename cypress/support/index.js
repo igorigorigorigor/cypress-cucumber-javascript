@@ -1,20 +1,15 @@
-// ***********************************************************
-// This example support/index.js is processed and
-// loaded automatically before your test files.
-//
-// This is a great place to put global configuration and
-// behavior that modifies Cypress.
-//
-// You can change the location of this file or turn off
-// automatically serving support files with the
-// 'supportFile' configuration option.
-//
-// You can read more here:
-// https://on.cypress.io/configuration
-// ***********************************************************
-
-// Import commands.js using ES2015 syntax:
 import './commands'
+import User from "./roles/user";
+import MainPage from "./pages/mainPage";
+import LoginPage from "./pages/loginPage";
+import SalesOrdersPage from "./pages/salesOrdersPage";
+import AuthenticateAPI from "./apis/authenticateAPI";
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+export const trialUser= new User(Cypress.env('credentials').trialUser.email,
+    Cypress.env('credentials').trialUser.password)
+
+export const mainPage= new MainPage();
+export const loginPage= new LoginPage();
+export const salesOrdersPage= new SalesOrdersPage();
+
+export const authenticateAPI= new AuthenticateAPI();
