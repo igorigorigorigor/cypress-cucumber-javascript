@@ -1,11 +1,17 @@
 class SalesOrdersPage {
-    static path= Cypress.env('sales_orders_url')
+    #path= Cypress.env("pageUrls").salesOrdersUrl
 
     open() {
-        cy.visit(SalesOrdersPage.path);
+        cy.visit(this.#path);
     }
-    getSalesOrdersTitle() {
+    getSellTab() {
+        return cy.contains('Sell');
+    }
+    getSalesOrdersTab() {
         return cy.contains('Sales orders');
+    }
+    getOpenTab() {
+        return cy.get('[class=\'MuiTab-wrapper\']');
     }
 }
 export default SalesOrdersPage

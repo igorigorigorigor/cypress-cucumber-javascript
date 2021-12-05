@@ -29,6 +29,6 @@ Then(`App makes request to authentication api and shows error`, () => {
         .getAuthError()
         .should('be.visible');
     salesOrdersPage
-        .getSalesOrdersTitle()
+        .getSalesOrdersTab()
         .should('not.exist');
 });

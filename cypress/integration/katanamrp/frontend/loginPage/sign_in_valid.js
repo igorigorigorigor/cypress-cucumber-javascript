@@ -31,6 +31,6 @@ Then(`App makes request to authentication api and redirects to "sales" page`, ()
         expect(response.statusCode).to.eq(200)
     });
     salesOrdersPage
-        .getSalesOrdersTitle()
+        .getSalesOrdersTab()
         .should('be.visible');
 });

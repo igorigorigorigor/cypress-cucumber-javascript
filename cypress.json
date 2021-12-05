@@ -16,8 +16,9 @@
       }
     },
     "pageUrls": {
-      "mainUrl": "/",
-      "loginUrl": "/login"
+      "mainUrl": "https://katanamrp.com/",
+      "loginUrl": "https://katanamrp.com/login",
+      "salesOrdersUrl": "https://factory.katanamrp.com/sales"
     },
     "apiUrls": {
       "loginUrl": "https://login.katanamrp.com/co/authenticate"
