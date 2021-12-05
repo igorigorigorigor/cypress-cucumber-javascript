@@ -2,7 +2,7 @@
   "ignoreTestFiles": "*.js",
   "testFiles": "**/*.{feature,features}",
   "baseUrl": "https://katanamrp.com/",
-  "defaultCommandTimeout": 10000,
+  "defaultCommandTimeout": 20000,
   "env": {
     "credentials": {
       "trialUser": {

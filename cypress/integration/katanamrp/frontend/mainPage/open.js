@@ -3,17 +3,15 @@ import {
     mainPage
 } from "../../../../support";
 
-describe('Open the main page', () => {
-    Given('I open the main page', () => {
-        mainPage.open();
-    });
+Given('I open the main page', () => {
+    mainPage.open();
+});
 
-    Then(`I see "Katana" in the title and "accept our cookie policy" pop-up`, () => {
-        mainPage.getTitleText()
-            .should('be.visible')
-        mainPage.getCookiePolicyText()
-            .should('be.visible');
-        mainPage.getCookiePolicyAcceptButton()
-            .should('be.visible');
-    });
-})
+Then(`I see "Katana" in the title and "accept our cookie policy" pop-up`, () => {
+    mainPage.getTitleText()
+        .should('be.visible')
+    mainPage.getCookiePolicyText()
+        .should('be.visible');
+    mainPage.getCookiePolicyAcceptButton()
+        .should('be.visible');
+});
