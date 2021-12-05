@@ -10,7 +10,7 @@ export const {authenticateAPIRequestJsonSchema} = require('./apis/authentication
 export const {authenticateAPIResponseJsonSchema} = require('./apis/authentication/authenticateAPIResponseJsonSchema');
 export const chai = require('chai');
 export const crypto = require("crypto");
-export const randomEmail = require('random-email');
+export const getRandomEmail = require('random-email');
 
 export const trialUser= new User(
     Cypress.env('credentials').trialUser.email,
@@ -25,6 +25,9 @@ export const authenticateAPI= new AuthenticateAPI();
 
 export function getRandomString(length) {
     return crypto.randomBytes(length).toString('hex');
+}
+export function getRandomPhoneNumber(length) {
+    return Math.floor(100000000 + Math.random() * 900000000);
 }
 
 export function signIn(email, password){

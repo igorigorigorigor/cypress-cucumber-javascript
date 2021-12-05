@@ -1,6 +1,6 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
 import {
-    randomEmail,
+    getRandomEmail,
     authenticateAPI,
     loginPage,
     salesOrdersPage,
@@ -16,7 +16,7 @@ Given('I sign in with invalid email', () => {
         .open();
     loginPage
         .getEmailInputField()
-        .type(randomEmail());
+        .type(getRandomEmail());
     loginPage
         .getPasswordInputField()
         .type(trialUser.getPassword());

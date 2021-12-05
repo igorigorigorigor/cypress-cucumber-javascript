@@ -1,10 +1,11 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
 import {
     customerCardPage,
-    mainPage, salesOrdersPage
+    mainPage, salesOrdersPage, signIn, trialUser
 } from "../../../../support";
 
 Given('I open the customer creation page', () => {
+    signIn(trialUser.getEmail(), trialUser.getPassword())
     customerCardPage.open();
 });
 
