@@ -1,4 +1,5 @@
 import {getRandomString, getRandomEmail, getRandomPhoneNumber} from "../index";
+import Address from "./address";
 
 class Customer {
     _firstName;
@@ -18,8 +19,8 @@ class Customer {
                 email = getRandomEmail(),
                 phone = getRandomPhoneNumber() ,
                 comment = getRandomString(10),
-                billingAddress = getRandomString(10),
-                defaultShippingAddress =getRandomString(10)) {
+                billingAddress = new Address(),
+                defaultShippingAddress = new Address()) {
         this._firstName = firstName;
         this._lastName = lastName;
         this._companyName = companyName;
