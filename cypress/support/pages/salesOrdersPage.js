@@ -1,9 +1,8 @@
-class SalesOrdersPage {
-    #path= Cypress.env("pageUrls").salesOrdersUrl
+import BasePage from "./basePage";
 
-    open() {
-        cy.visit(this.#path);
-    }
+class SalesOrdersPage extends BasePage {
+    _path= Cypress.env("pageUrls").salesOrdersUrl
+
     getSellTab() {
         return cy.contains('Sell');
     }
@@ -11,7 +10,13 @@ class SalesOrdersPage {
         return cy.contains('Sales orders');
     }
     getOpenTab() {
-        return cy.get('[class=\'MuiTab-wrapper\']');
+        return cy.contains('Open');
+    }
+    getPlusButton() {
+        return cy.get('#globalAdd');
+    }
+    getAddCustomerMenuItem() {
+        return cy.get('#add-customer');
     }
 }
 export default SalesOrdersPage

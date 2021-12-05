@@ -2,6 +2,7 @@
   "ignoreTestFiles": "*.js",
   "testFiles": "**/*.{feature,features}",
   "baseUrl": "https://katanamrp.com/",
+  "defaultCommandTimeout": 10000,
   "env": {
     "credentials": {
       "trialUser": {
@@ -18,7 +19,8 @@
     "pageUrls": {
       "mainUrl": "https://katanamrp.com/",
       "loginUrl": "https://katanamrp.com/login",
-      "salesOrdersUrl": "https://factory.katanamrp.com/sales"
+      "salesOrdersUrl": "https://factory.katanamrp.com/sales",
+      "customerCardUrl": "https://factory.katanamrp.com/customer"
     },
     "apiUrls": {
       "loginUrl": "https://login.katanamrp.com/co/authenticate"

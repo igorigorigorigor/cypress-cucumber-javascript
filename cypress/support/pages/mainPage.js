@@ -1,9 +1,8 @@
-class MainPage {
-    #path= Cypress.env("pageUrls").mainUrl
+import BasePage from "./basePage";
 
-    open() {
-        cy.visit(this.#path);
-    }
+class MainPage  extends BasePage{
+    _path= Cypress.env("pageUrls").mainUrl
+    
     getTitleText() {
         return cy.contains('Everything you need to keep manufacturing');
     }

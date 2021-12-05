@@ -1,8 +1,8 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
-import {authenticateAPI, mainPage, salesOrdersPage, trialUser} from "../../../../support";
+import {sign_in, salesOrdersPage, trialUser} from "../../../../support";
 
 beforeEach(() => {
-    cy.sign_in(trialUser.getEmail(), trialUser.getPassword());
+    sign_in(trialUser.getEmail(), trialUser.getPassword());
 })
 
 Given('I open the sales page', () => {

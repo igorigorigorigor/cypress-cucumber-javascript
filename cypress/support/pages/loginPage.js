@@ -1,9 +1,8 @@
-class LoginPage {
-    #path= Cypress.env("pageUrls").loginUrl
+import BasePage from "./basePage";
 
-    open() {
-        cy.visit(this.#path);
-    }
+class LoginPage extends BasePage {
+    _path= Cypress.env("pageUrls").loginUrl
+
     getEmailInputField() {
         return cy.get('[name=email]');
     }

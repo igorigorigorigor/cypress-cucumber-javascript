@@ -3,6 +3,7 @@ import User from "./roles/user";
 import MainPage from "./pages/mainPage";
 import LoginPage from "./pages/loginPage";
 import SalesOrdersPage from "./pages/salesOrdersPage";
+import CustomerCardPage from "./pages/customerCardPage";
 import AuthenticateAPI from "./apis/authentication/authenticateAPI";
 
 export const {authenticateAPIRequestJsonSchema} = require('./apis/authentication/authenticateAPIRequestJsonSchema');
@@ -18,9 +19,18 @@ export const trialUser= new User(
 export const mainPage= new MainPage();
 export const loginPage= new LoginPage();
 export const salesOrdersPage= new SalesOrdersPage();
+export const customerCardPage= new CustomerCardPage();
 
 export const authenticateAPI= new AuthenticateAPI();
 
-export default function getRandomString(length) {
+export function getRandomString(length) {
     return crypto.randomBytes(length).toString('hex');
+}
+
+export function sign_in(email, password){
+    loginPage.open();
+    loginPage.getEmailInputField().type(email);
+    loginPage.getPasswordInputField().type(password);
+    loginPage.getSignInButton().click();
+    salesOrdersPage.getSellTab();
 }
