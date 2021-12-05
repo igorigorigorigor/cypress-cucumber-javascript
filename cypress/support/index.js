@@ -27,7 +27,7 @@ export function getRandomString(length) {
     return crypto.randomBytes(length).toString('hex');
 }
 
-export function sign_in(email, password){
+export function signIn(email, password){
     loginPage.open();
     loginPage.getEmailInputField().type(email);
     loginPage.getPasswordInputField().type(password);
