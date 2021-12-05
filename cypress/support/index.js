@@ -8,6 +8,7 @@ import AuthenticateAPI from "./apis/authentication/authenticateAPI";
 import AddressDialog from "./pages/dialogs/AddressDialog";
 import BillingAddressDialog from "./pages/dialogs/BillingAddressDialog";
 import ShippingAddressDialog from "./pages/dialogs/ShippingAddressDialog";
+import AddCustomerAPI from "./apis/customer/addCustomerAPI";
 
 export const {authenticateAPIRequestJsonSchema} = require('./apis/authentication/authenticateAPIRequestJsonSchema');
 export const {authenticateAPIResponseJsonSchema} = require('./apis/authentication/authenticateAPIResponseJsonSchema');
@@ -27,6 +28,7 @@ export const billingAddressDialog= new BillingAddressDialog();
 export const shippingAddressDialog= new ShippingAddressDialog();
 
 export const authenticateAPI= new AuthenticateAPI();
+export const addCustomerAPI= new AddCustomerAPI();
 
 export function getRandomString(length) {
     return crypto.randomBytes(length).toString('hex');

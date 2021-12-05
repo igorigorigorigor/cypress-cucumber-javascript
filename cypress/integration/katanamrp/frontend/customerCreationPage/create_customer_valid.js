@@ -1,10 +1,15 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
 import {
+    addCustomerAPI,
+    authenticateAPI, authenticateAPIRequestJsonSchema,
     billingAddressDialog,
     customerCardPage,
     mainPage, salesOrdersPage, shippingAddressDialog, signIn, trialUser
 } from "../../../../support";
 import Customer from "../../../../support/models/customer";
+import {addCustomerAPIRequestJsonSchema} from "../../../../support/apis/customer/addCustomerAPIRequestJsonSchema";
+
+const {expect} = require("chai").use(require('chai-json-schema'));
 
 const customer = new Customer();
 
@@ -14,6 +19,7 @@ Given('I fill in all customer fields', () => {
 });
 
 Then(`App creates customer for the current user`, () => {
+    addCustomerAPI.intercept();
     customerCardPage
         .getCustomerTitle()
         .should('be.visible');
@@ -25,6 +31,16 @@ Then(`App creates customer for the current user`, () => {
         .getLastNameInputField()
         .should('be.visible')
         .type(customer.lastName);
+    addCustomerAPI
+        .getInterceptedRequestAndResponse().should((
+        { request, response }) => {
+        expect(request.body).to.be.jsonSchema(addCustomerAPIRequestJsonSchema);
+        expect(request.body).to.deep.include( {
+            firstName: customer.firstName,
+            name: customer.firstName
+        });
+        expect(response.statusCode).to.eq(200)
+    });
     customerCardPage
         .getCompanyNameInputField()
         .should('be.visible')

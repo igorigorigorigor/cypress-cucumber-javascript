@@ -1,44 +1,23 @@
-class AuthenticateAPI {
-    #client_id= Cypress.env("credentials").params.client_id
-    #realm= Cypress.env("credentials").params.realm
-    #credential_type= Cypress.env("credentials").params.credential_type
-    #origin= Cypress.env("credentials").params.origin
-    #url= Cypress.env("apiUrls").loginUrl
-    #content_type= 'application/json'
-    #method= 'POST'
-    #alias= 'post'
-    #at_alias= '@post'
+import BasePostAPI from "../basePostAPI";
 
-    intercept() {
-        cy.intercept('POST', this.#url).as(this.#alias);
-    }
-    getInterceptedRequestAndResponse() {
-        return cy.wait(this.#at_alias);
-    }
-    makeRequest(payload) {
-        return cy.request({
-            method: this.#method,
-            url: this.#url,
-            headers: {
-                'Content-Type': this.#content_type,
-                'Origin': this.#origin
-            },
-            body: payload});
-    }
+class AuthenticateAPI extends BasePostAPI {
+    _client_id= Cypress.env("credentials").params.client_id
+    _realm= Cypress.env("credentials").params.realm
+    _credential_type= Cypress.env("credentials").params.credential_type
+    _origin= Cypress.env("credentials").params.origin
+    _url= Cypress.env("apiUrls").loginUrl
+
     getDefaultClientID() {
-        return this.#client_id;
+        return this._client_id;
     }
     getDefaultRealm() {
-        return this.#realm;
+        return this._realm;
     }
     getDefaultCredentialType() {
-        return this.#credential_type;
+        return this._credential_type;
     }
     getDefaultOrigin() {
-        return this.#origin;
-    }
-    getDefaultContentType() {
-        return this.#content_type;
+        return this._origin;
     }
 }
 export default AuthenticateAPI
