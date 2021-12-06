@@ -33,24 +33,17 @@ npm run report
   /integration
     /katanamrp
       /backend (features and steps for rest api)
-        /authenticateAPI
-          - authenticate_valid.js (steps for authenticate api)
-        - authenticateAPI.feature (scenarios for authenticate api)
-      /frontend (features and steps for web app)
-        /customersPage (steps for /customers page)
-        /loginPage (steps for /login page)
-        /mainPage (steps for root page)
-        /salesPage (steps for /sales page)
-        - customersPage.feature (scenarios for /customers page)
-        - loginPage.feature (scenarios for /login page)
-        - mainPage.feature (scenarios for root page)
-        - salesPage.feature (scenarios for /sales page)
+      /frontend (features and steps for web pages)
     - All.features (suite for running all features tests)
 
   /plugins
-    - index.js
+    - index.js (contains cucumber plugin)
 
   /support
-    - commands.js
-    - index.js
+    /apis (contains models for rest api)
+    /models (contains utility models)
+    /pages (contains models for web pages)
+    /roles (contains models for user roles)
+    - commands.js (redefines cypress commands)
+    - index.js (contains constants for page objects instances and utility functions) 
 ```

@@ -5,7 +5,6 @@ import LoginPage from "./pages/loginPage";
 import SalesOrdersPage from "./pages/salesOrdersPage";
 import CustomersPage from "./pages/customersPage";
 import AuthenticateAPI from "./apis/authentication/authenticateAPI";
-import AddressDialog from "./pages/dialogs/AddressDialog";
 import BillingAddressDialog from "./pages/dialogs/BillingAddressDialog";
 import ShippingAddressDialog from "./pages/dialogs/ShippingAddressDialog";
 import AddCustomerAPI from "./apis/customer/addCustomerAPI";
