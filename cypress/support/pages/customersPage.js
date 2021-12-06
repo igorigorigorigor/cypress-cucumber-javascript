@@ -1,6 +1,6 @@
 import BasePage from "./basePage";
 
-class CustomerCardPage  extends BasePage {
+class CustomersPage extends BasePage {
     _path= Cypress.env("pageUrls").customerCardUrl
 
     getCustomerTitle() {
@@ -61,4 +61,4 @@ class CustomerCardPage  extends BasePage {
         return cy.get('[name=defaultShippingAddress]');
     }
 }
-export default CustomerCardPage
+export default CustomersPage

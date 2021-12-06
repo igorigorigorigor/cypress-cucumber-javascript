@@ -3,7 +3,7 @@ import {
     addCustomerAPI,
     authenticateAPI, authenticateAPIRequestJsonSchema,
     billingAddressDialog,
-    customerCardPage,
+    customersPage,
     mainPage, salesOrdersPage, shippingAddressDialog, signIn, trialUser
 } from "../../../../support";
 import Customer from "../../../../support/models/customer";
@@ -15,19 +15,19 @@ const customer = new Customer();
 
 Given('I fill in all customer fields', () => {
     signIn(trialUser.getEmail(), trialUser.getPassword())
-    customerCardPage.open();
+    customersPage.open();
 });
 
 Then(`App creates customer for the current user`, () => {
     addCustomerAPI.intercept();
-    customerCardPage
+    customersPage
         .getCustomerTitle()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getFirstNameInputField()
         .should('be.visible')
         .type(customer.firstName);
-    customerCardPage
+    customersPage
         .getLastNameInputField()
         .should('be.visible')
         .type(customer.lastName);
@@ -41,27 +41,27 @@ Then(`App creates customer for the current user`, () => {
         });
         expect(response.statusCode).to.eq(200)
     });
-    customerCardPage
+    customersPage
         .getCompanyNameInputField()
         .should('be.visible')
         .type(customer.companyName);
-    customerCardPage
+    customersPage
         .getDisplayNameInputField()
         .should('be.visible')
         .type(customer.displayName);
-    customerCardPage
+    customersPage
         .getEmailInputField()
         .should('be.visible')
         .type(customer.email);
-    customerCardPage
+    customersPage
         .getPhoneInputField()
         .should('be.visible')
         .type(customer.phone);
-    customerCardPage
+    customersPage
         .getCommentInputField()
         .should('be.visible')
         .type(customer.comment);
-    customerCardPage
+    customersPage
         .getBillingAddressInputField()
         .should('be.visible')
         .click();
@@ -113,7 +113,7 @@ Then(`App creates customer for the current user`, () => {
         .should('be.visible')
         .click();
 
-    customerCardPage
+    customersPage
         .getDefaultShippingAddressInputField()
         .should('be.visible')
         .click();

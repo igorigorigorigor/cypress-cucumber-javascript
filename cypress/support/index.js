@@ -3,7 +3,7 @@ import User from "./roles/user";
 import MainPage from "./pages/mainPage";
 import LoginPage from "./pages/loginPage";
 import SalesOrdersPage from "./pages/salesOrdersPage";
-import CustomerCardPage from "./pages/customerCardPage";
+import CustomersPage from "./pages/customersPage";
 import AuthenticateAPI from "./apis/authentication/authenticateAPI";
 import AddressDialog from "./pages/dialogs/AddressDialog";
 import BillingAddressDialog from "./pages/dialogs/BillingAddressDialog";
@@ -23,7 +23,7 @@ export const trialUser= new User(
 export const mainPage= new MainPage();
 export const loginPage= new LoginPage();
 export const salesOrdersPage= new SalesOrdersPage();
-export const customerCardPage= new CustomerCardPage();
+export const customersPage= new CustomersPage();
 export const billingAddressDialog= new BillingAddressDialog();
 export const shippingAddressDialog= new ShippingAddressDialog();
 

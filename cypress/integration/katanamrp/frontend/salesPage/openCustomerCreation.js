@@ -1,5 +1,5 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
-import {signIn, customerCardPage, salesOrdersPage, trialUser} from "../../../../support";
+import {signIn, customersPage, salesOrdersPage, trialUser} from "../../../../support";
 
 Given('I press "+" button and select "Customer" option', () => {
     signIn(trialUser.getEmail(), trialUser.getPassword());
@@ -18,62 +18,62 @@ Then(`App returns "customer card" page for the current user`, () => {
         .getAddCustomerMenuItem()
         .should('be.visible')
         .click();
-    customerCardPage
+    customersPage
         .getCustomerTitle()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getFirstNameTitle()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getLastNameTitle()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getCompanyNameTitle()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getDisplayNameTitle()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getEmailTitle()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getPhoneTitle()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getCommentTitle()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getBillingAddressTitle()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getDefaultShippingAddressTitle()
         .should('be.visible');
 
-    customerCardPage
+    customersPage
         .getFirstNameInputField()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getLastNameInputField()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getCompanyNameInputField()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getDisplayNameInputField()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getEmailInputField()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getPhoneInputField()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getCommentInputField()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getBillingAddressInputField()
         .should('be.visible');
-    customerCardPage
+    customersPage
         .getDefaultShippingAddressInputField()
         .should('be.visible');
 });
