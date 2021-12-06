@@ -2,8 +2,11 @@ import { Given } from "cypress-cucumber-preprocessor/steps";
 import {
     addCustomerAPI,
     billingAddressDialog,
-    customersPage, editCustomerAPI, format,
-    shippingAddressDialog, signIn, trialUser
+    customersPage,
+    editCustomerAPI,
+    shippingAddressDialog,
+    signIn,
+    trialUser
 } from "../../../../support";
 import Customer from "../../../../support/models/customer";
 import {addCustomerAPIRequestJsonSchema} from "../../../../support/apis/customer/addCustomerAPIRequestJsonSchema";
