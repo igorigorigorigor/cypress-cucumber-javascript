@@ -21,11 +21,6 @@ CYPRESS_TAGS="@customer-creation-page" npm test
 CYPRESS_TAGS="not @main-page" npm test
 ```
 
-## Generate HTML report with screenshots
-```
-npm run report
-```
-
 ## Project structure
 ```
 /cypress

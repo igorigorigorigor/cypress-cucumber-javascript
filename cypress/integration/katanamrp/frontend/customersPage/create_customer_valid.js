@@ -10,6 +10,7 @@ import {
 } from "../../../../support";
 import Customer from "../../../../support/models/customer";
 import {addCustomerAPIRequestJsonSchema} from "../../../../support/apis/customer/addCustomerAPIRequestJsonSchema";
+import {editCustomerAPIRequestJsonSchema} from "../../../../support/apis/customer/editCustomerAPIRequestJsonSchema";
 
 const {expect} = require("chai").use(require('chai-json-schema'));
 
@@ -44,11 +45,12 @@ Then(`App creates customer for the current user`, () => {
         });
         expect(response.statusCode).to.eq(200)
         customer.id = response.body.id
+        console.log("DEBUG")
+        console.log(response.body.id)
+        editCustomerAPI.url=editCustomerAPI.url + customer.id
+        editCustomerAPI.intercept();
+        console.log(editCustomerAPI.url)
     });
-    editCustomerAPI.url=String.format(editCustomerAPI.url, customer.id)
-    console.log("DEBUG")
-    console.log(editCustomerAPI.url)
-    editCustomerAPI.intercept();
 
     customersPage
         .getCompanyNameInputField()
@@ -179,7 +181,7 @@ Then(`App creates customer for the current user`, () => {
         expect(request.body).to.be.jsonSchema(editCustomerAPIRequestJsonSchema);
         expect(request.body).to.deep.include( {
             firstName: customer.firstName,
-            name: customer.firstName
+            name: customer.firstName + " " + customer.lastName
         });
         expect(response.statusCode).to.eq(200)
     });
