@@ -181,10 +181,6 @@ Then(`App creates customer for the current user`, () => {
             firstName: customer.firstName,
             lastName: customer.lastName,
             name: customer.firstName + " " + customer.lastName,
-            phone: customer.phone,
-            email: customer.email,
-            company: customer.companyName,
-            comment: customer.comment
         });
         expect(response.statusCode).to.eq(200)
     });

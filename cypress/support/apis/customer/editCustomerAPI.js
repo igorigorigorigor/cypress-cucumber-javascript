@@ -1,4 +1,4 @@
-import BasePatchAPI from "../BasePatchAPI";
+import BasePatchAPI from "../basePatchAPI";
 
 class EditCustomerAPI extends BasePatchAPI {
     _url= Cypress.env("apiUrls").editCustomerUrl
