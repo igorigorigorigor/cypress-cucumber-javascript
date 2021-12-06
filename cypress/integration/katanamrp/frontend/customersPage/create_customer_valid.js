@@ -45,11 +45,8 @@ Then(`App creates customer for the current user`, () => {
         });
         expect(response.statusCode).to.eq(200)
         customer.id = response.body.id
-        console.log("DEBUG")
-        console.log(response.body.id)
         editCustomerAPI.url=editCustomerAPI.url + customer.id
         editCustomerAPI.intercept();
-        console.log(editCustomerAPI.url)
     });
 
     customersPage
@@ -171,6 +168,7 @@ Then(`App creates customer for the current user`, () => {
         .getCountryInputField()
         .should('be.visible')
         .type(customer.defaultShippingAddress.country);
+
     shippingAddressDialog
         .getSubmitButton()
         .should('be.visible')

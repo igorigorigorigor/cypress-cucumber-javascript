@@ -1,7 +1,7 @@
 name: 'Run All Tests'
 on: [push, pull_request]
 jobs:
-  ubuntu-job:
+  cypress-run:
     name: 'Test on Ubuntu'
     runs-on: ubuntu-latest
     steps:
