@@ -181,7 +181,12 @@ Then(`App creates customer for the current user`, () => {
         expect(request.body).to.be.jsonSchema(editCustomerAPIRequestJsonSchema);
         expect(request.body).to.deep.include( {
             firstName: customer.firstName,
-            name: customer.firstName + " " + customer.lastName
+            lastName: customer.lastName,
+            name: customer.firstName + " " + customer.lastName,
+            phone: customer.phone,
+            email: customer.email,
+            company: customer.companyName,
+            comment: customer.comment
         });
         expect(response.statusCode).to.eq(200)
     });
