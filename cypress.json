@@ -1,0 +1,34 @@
+{
+  "projectId": "5gppfj",
+  "ignoreTestFiles": "*.js",
+  "testFiles": "**/*.{feature,features}",
+  "video": false,
+  "baseUrl": "https://katanamrp.com/",
+  "defaultCommandTimeout": 20000,
+  "env": {
+    "credentials": {
+      "trialUser": {
+        "email": "andrianov2406@gmail.com",
+        "password": "PK7rm8!@#$"
+      },
+      "params": {
+        "origin": "https://katanamrp.com",
+        "client_id": "fhZWp3TRAtS3U0X3QXk-Ct4Awxzc92P3",
+        "realm": "Username-Password-Authentication",
+        "credential_type": "http://auth0.com/oauth/grant-type/password-realm"
+      }
+    },
+    "pageUrls": {
+      "mainUrl": "https://katanamrp.com/",
+      "loginUrl": "https://katanamrp.com/login",
+      "salesOrdersUrl": "https://factory.katanamrp.com/sales",
+      "customerCardUrl": "https://factory.katanamrp.com/customer"
+    },
+    "apiUrls": {
+      "origin": "https://factory.katanamrp.com",
+      "loginUrl": "https://login.katanamrp.com/co/authenticate",
+      "addCustomerUrl": "https://customers.katanamrp.com/api/customers",
+      "editCustomerUrl": "https://customers.katanamrp.com/api/customers/"
+    }
+  }
+}
