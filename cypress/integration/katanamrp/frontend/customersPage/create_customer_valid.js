@@ -1,10 +1,9 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
 import {
     addCustomerAPI,
-    authenticateAPI, authenticateAPIRequestJsonSchema,
     billingAddressDialog,
-    customersPage,
-    mainPage, salesOrdersPage, shippingAddressDialog, signIn, trialUser
+    customersPage, editCustomerAPI, format,
+    shippingAddressDialog, signIn, trialUser
 } from "../../../../support";
 import Customer from "../../../../support/models/customer";
 import {addCustomerAPIRequestJsonSchema} from "../../../../support/apis/customer/addCustomerAPIRequestJsonSchema";
@@ -31,6 +30,7 @@ Then(`App creates customer for the current user`, () => {
         .getLastNameInputField()
         .should('be.visible')
         .type(customer.lastName);
+
     addCustomerAPI
         .getInterceptedRequestAndResponse().should((
         { request, response }) => {
@@ -40,7 +40,13 @@ Then(`App creates customer for the current user`, () => {
             name: customer.firstName
         });
         expect(response.statusCode).to.eq(200)
+        customer.id = response.body.id
     });
+    editCustomerAPI.url=String.format(editCustomerAPI.url, customer.id)
+    console.log("DEBUG")
+    console.log(editCustomerAPI.url)
+    editCustomerAPI.intercept();
+
     customersPage
         .getCompanyNameInputField()
         .should('be.visible')
@@ -164,4 +170,14 @@ Then(`App creates customer for the current user`, () => {
         .getSubmitButton()
         .should('be.visible')
         .click();
+    editCustomerAPI
+        .getInterceptedRequestAndResponse().should((
+        { request, response }) => {
+        expect(request.body).to.be.jsonSchema(editCustomerAPIRequestJsonSchema);
+        expect(request.body).to.deep.include( {
+            firstName: customer.firstName,
+            name: customer.firstName
+        });
+        expect(response.statusCode).to.eq(200)
+    });
 });

@@ -2,6 +2,7 @@ import {getRandomString, getRandomEmail, getRandomPhoneNumber} from "../index";
 import Address from "./address";
 
 class Customer {
+    _id;
     _firstName;
     _lastName;
     _companyName;
@@ -30,6 +31,14 @@ class Customer {
         this._comment = comment;
         this._billingAddress = billingAddress;
         this._defaultShippingAddress = defaultShippingAddress;
+    }
+
+    get id() {
+        return this._id;
+    }
+
+    set id(value) {
+        this._id = value;
     }
 
     get firstName() {

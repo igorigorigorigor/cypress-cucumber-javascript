@@ -25,7 +25,8 @@
     "apiUrls": {
       "origin": "https://factory.katanamrp.com",
       "loginUrl": "https://login.katanamrp.com/co/authenticate",
-      "addCustomerUrl": "https://customers.katanamrp.com/api/customers"
+      "addCustomerUrl": "https://customers.katanamrp.com/api/customers",
+      "editCustomerUrl": "https://customers.katanamrp.com/api/customers/%1$s"
     }
   }
 }
