@@ -2,6 +2,7 @@
   "projectId": "5gppfj",
   "ignoreTestFiles": "*.js",
   "testFiles": "**/*.{feature,features}",
+  "video": false,
   "baseUrl": "https://katanamrp.com/",
   "defaultCommandTimeout": 20000,
   "env": {

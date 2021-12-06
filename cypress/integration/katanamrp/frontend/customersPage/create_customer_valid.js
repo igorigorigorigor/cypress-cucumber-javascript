@@ -168,11 +168,11 @@ Then(`App creates customer for the current user`, () => {
         .getCountryInputField()
         .should('be.visible')
         .type(customer.defaultShippingAddress.country);
-
     shippingAddressDialog
         .getSubmitButton()
         .should('be.visible')
         .click();
+
     editCustomerAPI
         .getInterceptedRequestAndResponse().should((
         { request, response }) => {
